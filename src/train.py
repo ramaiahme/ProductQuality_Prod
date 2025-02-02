@@ -43,7 +43,7 @@ def train(data_path,model_path,random_state,n_estimators,max_depth):
 
         param_grid = {
             'max_depth': [5,10,None,1],
-            "n_estimators": [100, 150, 200,250]
+            "n_estimators": [120, 150, 200,250]
         }
     
         grid_search = hyperparameter_tuning(X_train,y_train,param_grid)
