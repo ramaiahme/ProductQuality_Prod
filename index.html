@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Quality Prediction</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        label { display: block; margin-bottom: 0.5em; }
+        input[type="number"] { margin-left: 1em; }
+        button { margin-top: 1em; padding: 0.5em 1em; cursor: pointer; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Product Quality Prediction</h1>
+    <form method="post" action="/predict">
+        <label>Temperature (°C): <input type="number" step="any" name="temperature" required></label>
+        <label>Pressure (kPa): <input type="number" step="any" name="pressure" required></label>
+        <label>Temperature x Pressure: <input type="number" step="any" name="temperature_pressure" required></label>
+        <label>Material Fusion Metric: <input type="number" step="any" name="material_fusion_metric" required></label>
+        <label>Material Transformation Metric: <input type="number" step="any" name="material_transformation_metric" required></label>
+        <button type="submit">Predict Quality</button>
+    </form>
+    {% if prediction %}
+        <p> {{ prediction }} </p>
+    {% endif %}
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
