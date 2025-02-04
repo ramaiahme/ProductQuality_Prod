@@ -4,3 +4,6 @@ scikit-learn
 mlflow
 dvc-s3
 numpy
+fastapi
+python-multipart
+uvicorn
